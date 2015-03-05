@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ReferencePath>$(SolutionDir)Bin\</ReferencePath>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{04151C7F-54CF-4D45-B84D-E5BBF3CD63A6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Framesharp.Repository</RootNamespace>
+    <AssemblyName>Framesharp.Repository</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;SkipPostSharp</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NHibernate">
+      <HintPath>..\packages\NHibernate.4.0.3.4000\lib\net40\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="RepositoryFactory.cs" />
+    <Compile Include="IStatelessRepository.cs" />
+    <Compile Include="StatelessGenericRepository.cs" />
+    <Compile Include="StatelessRepositoryBase.cs" />
+    <Compile Include="GenericRepository.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IRepository.cs" />
+    <Compile Include="RepositoryBase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Framesharp.Collection\Framesharp.Collection.csproj">
+      <Project>{34893CCD-D37A-406C-8C09-DE9189A1C92A}</Project>
+      <Name>Framesharp.Collection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framesharp.Core\Framesharp.Core.csproj">
+      <Project>{C7734551-8C38-4886-A20D-E0DC7A220179}</Project>
+      <Name>Framesharp.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framesharp.DependencyInjection\Framesharp.DependencyInjection.csproj">
+      <Project>{18240F94-2126-452A-AD99-857247B298B4}</Project>
+      <Name>Framesharp.DependencyInjection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framesharp.Domain\Framesharp.Domain.csproj">
+      <Project>{255CAF06-8658-4DBD-B064-05E08CE44441}</Project>
+      <Name>Framesharp.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framesharp.Persistence.Collection\Framesharp.Persistence.Collection.csproj">
+      <Project>{9BC9A179-9664-4085-910A-DB0E30B9D113}</Project>
+      <Name>Framesharp.Persistence.Collection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framesharp.Persistence\Framesharp.Persistence.csproj">
+      <Project>{EB61812C-9A00-460F-A8F0-6B1AC70CDAAD}</Project>
+      <Name>Framesharp.Persistence</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+
+xcopy $(TargetDir)*.dll $(SolutionDir)Bin\ /Y
+
+	</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

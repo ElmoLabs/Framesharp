@@ -1,0 +1,55 @@
+﻿[data-datagrid] {
+    margin-bottom: 10px !important;
+}
+
+[data-datagrid] .action-buttons {
+    text-align: center;
+    white-space: nowrap !important;
+    vertical-align: middle !important;
+}
+
+[data-datagrid] th {
+    vertical-align: middle !important;
+}
+
+[data-datagrid] th a {
+    color: white;
+}
+
+[data-datagrid] [data-edit-row] {
+    display: none;
+}
+
+[data-datagrid] [data-edit-row] td {
+    vertical-align: top;
+}
+
+[data-datagrid] [data-details-row] > td {
+    padding: 0;
+}
+
+[data-datagrid] [data-details-row] [data-datagrid] {
+    margin-bottom: 0 !important;
+}
+
+[data-datagrid] [data-display-row] td {
+    vertical-align: middle;   
+}
+
+[data-pagination] {
+    text-align: center;
+}
+
+[data-datagrid] .help-inline {
+    display: inline;
+    padding: 0;
+}
+
+[data-datagrid] td input[type="checkbox"] {
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+[data-datagrid] td .form-control {
+    font-size: 13px;
+}
