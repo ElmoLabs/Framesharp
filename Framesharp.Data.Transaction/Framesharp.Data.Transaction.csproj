@@ -7,8 +7,8 @@
     <ProjectGuid>{66A21652-B1E5-4D06-A21D-14FEBF9238DF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Framesharp.Persistence.Transaction</RootNamespace>
-    <AssemblyName>Framesharp.Persistence.Transaction</AssemblyName>
+    <RootNamespace>Framesharp.Data.Transaction</RootNamespace>
+    <AssemblyName>Framesharp.Data.Transaction</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
@@ -63,9 +63,9 @@
       <Project>{c7734551-8c38-4886-a20d-e0dc7a220179}</Project>
       <Name>Framesharp.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Framesharp.Persistence\Framesharp.Persistence.csproj">
+    <ProjectReference Include="..\Framesharp.Data\Framesharp.Data.csproj">
       <Project>{eb61812c-9a00-460f-a8f0-6b1ac70cdaad}</Project>
-      <Name>Framesharp.Persistence</Name>
+      <Name>Framesharp.Data</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

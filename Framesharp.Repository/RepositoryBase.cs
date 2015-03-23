@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using Framesharp.Collection;
 using Framesharp.Core.Interfaces;
 using Framesharp.Domain;
-using Framesharp.Persistence.Collection;
-using Framesharp.Persistence.Interfaces;
+using Framesharp.Data.Collection;
+using Framesharp.Data.Interfaces;
 using NHibernate;
 using NHibernate.Criterion;
 

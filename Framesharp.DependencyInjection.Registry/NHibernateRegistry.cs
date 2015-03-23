@@ -1,6 +1,6 @@
 ﻿using NHibernate;
-using Framesharp.Persistence;
-using Framesharp.Persistence.Interfaces;
+using Framesharp.Data;
+using Framesharp.Data.Interfaces;
 
 namespace Framesharp.DependencyInjection.Registry
 {

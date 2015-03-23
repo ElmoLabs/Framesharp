@@ -2,10 +2,10 @@
 using System.Data;
 using System.Xml.Serialization;
 using Framesharp.Core.Interfaces;
-using Framesharp.Persistence.Interfaces;
+using Framesharp.Data.Interfaces;
 using PostSharp.Aspects;
 
-namespace Framesharp.Persistence.Transaction
+namespace Framesharp.Data.Transaction
 {
     [Serializable]
     public class TransactionScopeAttribute : OnMethodBoundaryAspect

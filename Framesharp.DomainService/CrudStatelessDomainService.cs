@@ -5,7 +5,7 @@ using Framesharp.Core.Interfaces;
 using Framesharp.DependencyInjection;
 using Framesharp.Domain;
 using Framesharp.DomainService.Interfaces;
-using Framesharp.Persistence.Interfaces;
+using Framesharp.Data.Interfaces;
 using Framesharp.Repository;
 
 namespace Framesharp.DomainService

@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using Framesharp.Collection;
 using Framesharp.Domain;
 
-namespace Framesharp.Persistence.Interfaces
+namespace Framesharp.Data.Interfaces
 {
-    public interface IPersistenceService
+    public interface IDataService
     {
     }
 
-    public interface IPersistenceService<T> : IPersistenceService where T : class, IDomainObject
+    public interface IDataService<T> : IDataService where T : class, IDomainObject
     {
         void Save(T entity);
 

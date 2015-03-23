@@ -74,9 +74,9 @@
       <Project>{B038F5B8-22E6-4F07-B144-45FDADF72D24}</Project>
       <Name>Framesharp.Configuration</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Framesharp.Persistence\Framesharp.Persistence.csproj">
+    <ProjectReference Include="..\Framesharp.Data\Framesharp.Data.csproj">
       <Project>{EB61812C-9A00-460F-A8F0-6B1AC70CDAAD}</Project>
-      <Name>Framesharp.Persistence</Name>
+      <Name>Framesharp.Data</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

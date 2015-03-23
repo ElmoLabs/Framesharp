@@ -1,7 +1,7 @@
 ﻿using System;
 using Framesharp.Core.Interfaces;
 using Framesharp.DependencyInjection;
-using Framesharp.Persistence.Interfaces;
+using Framesharp.Data.Interfaces;
 
 namespace Framesharp.Core
 {

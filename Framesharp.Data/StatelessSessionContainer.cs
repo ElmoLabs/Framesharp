@@ -1,37 +1,34 @@
-﻿using System;
-using System.Data;
-using Framesharp.Persistence.Interfaces;
+﻿using System.Data;
+using Framesharp.Data.Interfaces;
 using NHibernate;
 
-namespace Framesharp.Persistence
+namespace Framesharp.Data
 {
-    public class SessionContainer : SessionContainerBase, ISessionContainer, ISessionProvider
+    public class StatelessSessionContainer : SessionContainerBase, IStatelessSessionContainer, IStatelessSessionProvider
     {
-        public SessionContainer(ISession session)
+        public StatelessSessionContainer(IStatelessSession statelessSession)
         {
-            Session = session;
-
-            Session.FlushMode = FlushMode.Always;
+            StatelessSession = statelessSession;
         }
 
-        public ISession GetSession()
+        public IStatelessSession GetSession()
         {
-            return Session;
+            return StatelessSession;
         }
 
         public override bool HasActiveTransaction
         {
-            get { return Transaction != null && Transaction.IsActive; }
+            get { return Transaction.IsActive; }
         }
 
         public override void BeginTransaction()
         {
-            Transaction = Session.BeginTransaction();
+            Transaction = StatelessSession.BeginTransaction();
         }
 
         public override void BeginTransaction(IsolationLevel isolationLevel)
         {
-            Transaction = Session.BeginTransaction(isolationLevel);
+            Transaction = StatelessSession.BeginTransaction(isolationLevel);
         }
 
         public override void CommitTransaction()
@@ -62,10 +59,10 @@ namespace Framesharp.Persistence
                 Transaction.Dispose();
             }
 
-            if (Session != null && Session.IsOpen)
+            if (StatelessSession != null && StatelessSession.IsOpen)
             {
-                Session.Close();
-                Session.Dispose();
+                StatelessSession.Close();
+                StatelessSession.Dispose();
             }
         }
     }

@@ -1,6 +1,6 @@
 ﻿using System.Data;
 
-namespace Framesharp.Persistence.Interfaces
+namespace Framesharp.Data.Interfaces
 {
     public interface ITransactionManager
     {

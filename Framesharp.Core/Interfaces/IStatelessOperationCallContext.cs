@@ -1,5 +1,5 @@
 ﻿using System;
-using Framesharp.Persistence.Interfaces;
+using Framesharp.Data.Interfaces;
 
 namespace Framesharp.Core.Interfaces
 {

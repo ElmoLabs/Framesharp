@@ -1,9 +1,9 @@
 ﻿using System.Data;
-using Framesharp.Persistence.Interfaces;
+using Framesharp.Data.Interfaces;
 using NHibernate;
 using System;
 
-namespace Framesharp.Persistence
+namespace Framesharp.Data
 {
     public abstract class SessionContainerBase : ITransactionManager
     {

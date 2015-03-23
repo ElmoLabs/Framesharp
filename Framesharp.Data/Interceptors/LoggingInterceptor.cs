@@ -3,7 +3,7 @@ using System.Diagnostics;
 using NHibernate;
 using NHibernate.SqlCommand;
 
-namespace Framesharp.Persistence.Interceptors
+namespace Framesharp.Data.Interceptors
 {
     public class LoggingInterceptor : EmptyInterceptor, IInterceptor
     {

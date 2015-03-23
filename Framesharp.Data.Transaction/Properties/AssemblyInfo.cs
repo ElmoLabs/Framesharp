@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Framesharp.Persistence.Collection")]
+[assembly: AssemblyTitle("Framesharp.Data.Transaction")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Framesharp.Persistence.Collection")]
+[assembly: AssemblyProduct("Framesharp.Data.Transaction")]
 [assembly: AssemblyCopyright("Copyright ©  2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("6457a2a3-9a63-4dc9-92db-2f425dbd14a6")]
+[assembly: Guid("fc1e8c50-9b6c-48ed-a8ab-1bbe3993b80d")]
 
 // Version information for an assembly consists of the following four values:
 //

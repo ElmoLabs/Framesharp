@@ -1,9 +1,9 @@
 ﻿using System;
-using Framesharp.Persistence.Collection;
+using Framesharp.Data.Collection;
 using Framesharp.Collection;
 using NHibernate.Criterion;
 
-namespace Framesharp.Persistence.Extension
+namespace Framesharp.Data.Extension
 {
     public static class CriteriaExtension
     {

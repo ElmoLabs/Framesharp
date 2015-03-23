@@ -2,11 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using Framesharp.Collection;
-using Framesharp.Persistence;
+using Framesharp.Data;
 using Framesharp.Core.Interfaces;
 using Framesharp.Domain;
-using Framesharp.Persistence.Extension;
-using Framesharp.Persistence.Interfaces;
+using Framesharp.Data.Extension;
+using Framesharp.Data.Interfaces;
 using NHibernate;
 using NHibernate.Criterion;
 

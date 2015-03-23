@@ -1,13 +1,13 @@
 ﻿using Framesharp.Core.Interfaces;
 using Framesharp.DependencyInjection;
 using Framesharp.DomainService.Interfaces;
-using Framesharp.Persistence.Interfaces;
+using Framesharp.Data.Interfaces;
 
 namespace Framesharp.DomainService
 {
     public static class DomainServiceFactory
     {
-        public static T Get<T>(IOperationCallContext context) where T : IPersistenceService
+        public static T Get<T>(IOperationCallContext context) where T : IDataService
         {
             return DependencyResolver.GetInstance<T>("context", context);
         }

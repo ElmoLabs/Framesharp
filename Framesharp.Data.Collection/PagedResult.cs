@@ -3,7 +3,7 @@ using Framesharp.Collection;
 using NHibernate;
 using NHibernate.Criterion;
 
-namespace Framesharp.Persistence.Collection
+namespace Framesharp.Data.Collection
 {
     public sealed class PagedResult<T> : PagedListBase<T>
     {

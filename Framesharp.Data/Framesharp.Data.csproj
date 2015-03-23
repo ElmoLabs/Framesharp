@@ -15,8 +15,8 @@
     <ProjectGuid>{EB61812C-9A00-460F-A8F0-6B1AC70CDAAD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Framesharp.Persistence</RootNamespace>
-    <AssemblyName>Framesharp.Persistence</AssemblyName>
+    <RootNamespace>Framesharp.Data</RootNamespace>
+    <AssemblyName>Framesharp.Data</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -79,9 +79,9 @@
       <Project>{255CAF06-8658-4DBD-B064-05E08CE44441}</Project>
       <Name>Framesharp.Domain</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Framesharp.Persistence.Collection\Framesharp.Persistence.Collection.csproj">
+    <ProjectReference Include="..\Framesharp.Data.Collection\Framesharp.Data.Collection.csproj">
       <Project>{9BC9A179-9664-4085-910A-DB0E30B9D113}</Project>
-      <Name>Framesharp.Persistence.Collection</Name>
+      <Name>Framesharp.Data.Collection</Name>
     </ProjectReference>
     <ProjectReference Include="..\Framesharp.Configuration\Framesharp.Configuration.csproj">
       <Project>{B038F5B8-22E6-4F07-B144-45FDADF72D24}</Project>

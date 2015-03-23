@@ -1,6 +1,6 @@
 ﻿using NHibernate;
 
-namespace Framesharp.Persistence.Interfaces
+namespace Framesharp.Data.Interfaces
 {
     public interface IStatelessSessionProvider
     {

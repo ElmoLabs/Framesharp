@@ -1,10 +1,10 @@
 ﻿using Framesharp.Domain;
-using Framesharp.Persistence.Interfaces;
+using Framesharp.Data.Interfaces;
 using Framesharp.Repository;
 
 namespace Framesharp.DomainService.Interfaces
 {
-    public interface ICrudStatelessDomainService<T> : IStatelessDomainService, IPersistenceService<T> where T : class, IDomainObject
+    public interface ICrudStatelessDomainService<T> : IStatelessDomainService, IDataService<T> where T : class, IDomainObject
     {
     }
 

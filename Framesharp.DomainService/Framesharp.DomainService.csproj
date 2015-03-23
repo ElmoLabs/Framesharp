@@ -82,9 +82,9 @@
       <Project>{255CAF06-8658-4DBD-B064-05E08CE44441}</Project>
       <Name>Framesharp.Domain</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Framesharp.Persistence\Framesharp.Persistence.csproj">
+    <ProjectReference Include="..\Framesharp.Data\Framesharp.Data.csproj">
       <Project>{EB61812C-9A00-460F-A8F0-6B1AC70CDAAD}</Project>
-      <Name>Framesharp.Persistence</Name>
+      <Name>Framesharp.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\Framesharp.Repository\Framesharp.Repository.csproj">
       <Project>{04151C7F-54CF-4D45-B84D-E5BBF3CD63A6}</Project>

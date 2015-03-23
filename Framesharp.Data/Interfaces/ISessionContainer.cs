@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Framesharp.Persistence.Interfaces
+namespace Framesharp.Data.Interfaces
 {
     public interface ISessionContainer : ITransactionManager, IDisposable
     {

@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framesharp.Domain", "Frames
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framesharp.DomainService", "Framesharp.DomainService\Framesharp.DomainService.csproj", "{DB04F481-6E56-41AF-BEAE-19935CED9DBF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framesharp.Persistence", "Framesharp.Persistence\Framesharp.Persistence.csproj", "{EB61812C-9A00-460F-A8F0-6B1AC70CDAAD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framesharp.Data", "Framesharp.Data\Framesharp.Data.csproj", "{EB61812C-9A00-460F-A8F0-6B1AC70CDAAD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framesharp.Repository", "Framesharp.Repository\Framesharp.Repository.csproj", "{04151C7F-54CF-4D45-B84D-E5BBF3CD63A6}"
 EndProject
@@ -19,11 +19,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framesharp.DependencyInject
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framesharp.Core", "Framesharp.Core\Framesharp.Core.csproj", "{C7734551-8C38-4886-A20D-E0DC7A220179}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framesharp.Persistence.Collection", "Framesharp.Persistence.Collection\Framesharp.Persistence.Collection.csproj", "{9BC9A179-9664-4085-910A-DB0E30B9D113}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framesharp.Data.Collection", "Framesharp.Data.Collection\Framesharp.Data.Collection.csproj", "{9BC9A179-9664-4085-910A-DB0E30B9D113}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framesharp.Collection", "Framesharp.Collection\Framesharp.Collection.csproj", "{34893CCD-D37A-406C-8C09-DE9189A1C92A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framesharp.Persistence.Transaction", "Framesharp.Persistence.Transaction\Framesharp.Persistence.Transaction.csproj", "{66A21652-B1E5-4D06-A21D-14FEBF9238DF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framesharp.Data.Transaction", "Framesharp.Data.Transaction\Framesharp.Data.Transaction.csproj", "{66A21652-B1E5-4D06-A21D-14FEBF9238DF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
