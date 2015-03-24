@@ -10,8 +10,6 @@ namespace Framesharp.Data
         public SessionContainer(ISession session)
         {
             Session = session;
-
-            Session.FlushMode = FlushMode.Always;
         }
 
         public ISession GetSession()

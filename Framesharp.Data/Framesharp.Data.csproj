@@ -59,7 +59,7 @@
   <ItemGroup>
     <Compile Include="Extension\CriteriaExtension.cs" />
     <Compile Include="Interceptors\LoggingInterceptor.cs" />
-    <Compile Include="Interfaces\IPersistenceService.cs" />
+    <Compile Include="Interfaces\IPersistenceManager.cs" />
     <Compile Include="Interfaces\ISessionProvider.cs" />
     <Compile Include="Interfaces\ISessionContainer.cs" />
     <Compile Include="Interfaces\IStatelessSessionContainer.cs" />

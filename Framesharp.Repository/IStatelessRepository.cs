@@ -1,4 +1,5 @@
 ﻿using Framesharp.Core.Interfaces;
+using Framesharp.Data.Interfaces;
 using Framesharp.Domain;
 
 namespace Framesharp.Repository

@@ -105,6 +105,11 @@ namespace Framesharp.DomainService
             return ListAll(null);
         }
 
+        public virtual IList<T> ListAll(string columnName, object columnValue)
+        {
+            return Repository.ListAll(columnName, columnValue);
+        }
+
         public virtual IList<T> ListAll(IDictionary criteriaCollection)
         {
             return Repository.ListAll(criteriaCollection);
@@ -149,6 +154,11 @@ namespace Framesharp.DomainService
             return ListAll(null, pageNumber, pageSize);
         }
 
+        public virtual IPagedList<T> ListAll(string columnName, object columnValue, int pageNumber, int pageSize)
+        {
+            return Repository.ListAll(columnName, columnValue, pageNumber, pageSize);
+        }
+
         public virtual IPagedList<T> ListAll(IDictionary criteriaCollection, int pageNumber, int pageSize)
         {
             return Repository.ListAll(criteriaCollection, pageNumber, pageSize);
@@ -157,13 +167,14 @@ namespace Framesharp.DomainService
         #endregion
     }
 
-    public class CrudDomainService<T, TRepository> : CrudDomainService<T>, ICrudDomainService<T, TRepository> where TRepository : class, IRepository<T> where T : class, IDomainObject
+    public class CrudDomainService<T, TRepository> : CrudDomainService<T> where T : class, IDomainObject
     {
         protected new TRepository Repository { get; private set; }
 
-        public CrudDomainService(IOperationCallContext context) : base(context)
+        public CrudDomainService(IOperationCallContext operationCallContext)
+            : base(operationCallContext)
         {
-            Repository = DependencyResolver.GetInstance<TRepository>("context", context);
+            Repository = DependencyResolver.GetInstance<TRepository>("operationCallContext", operationCallContext);
         }
 
         public override void Dispose()

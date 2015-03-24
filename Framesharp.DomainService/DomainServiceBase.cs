@@ -7,9 +7,9 @@ namespace Framesharp.DomainService
     {
         public IOperationCallContext OperationCallContext { get; private set; }
 
-        protected DomainServiceBase(IOperationCallContext context)
+        protected DomainServiceBase(IOperationCallContext operationCallContext)
         {
-            OperationCallContext = context;
+            OperationCallContext = operationCallContext;
         }
 
         public virtual void Dispose()

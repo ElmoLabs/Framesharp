@@ -14,10 +14,10 @@ namespace Framesharp.DomainService
     {
         protected IStatelessRepository<T> Repository { get; private set; }
 
-        public CrudStatelessDomainService(IStatelessOperationCallContext context)
-            : base(context)
+        public CrudStatelessDomainService(IStatelessOperationCallContext operationCallContext)
+            : base(operationCallContext)
         {
-            Repository = DependencyResolver.GetInstance<IStatelessRepository<T>>("context", context);
+            Repository = DependencyResolver.GetInstance<IStatelessRepository<T>>("operationCallContext", operationCallContext);
         }
 
         public virtual void Save(T entity)
@@ -107,6 +107,11 @@ namespace Framesharp.DomainService
             return ListAll(null);
         }
 
+        public virtual IList<T> ListAll(string columnName, object columnValue)
+        {
+            return Repository.ListAll(columnName, columnValue);
+        }
+
         public virtual IList<T> ListAll(IDictionary criteriaCollection)
         {
             return Repository.ListAll(criteriaCollection);
@@ -151,6 +156,11 @@ namespace Framesharp.DomainService
             return ListAll(null, pageNumber, pageSize);
         }
 
+        public virtual IPagedList<T> ListAll(string columnName, object columnValue, int pageNumber, int pageSize)
+        {
+            return Repository.ListAll(columnName, columnValue, pageNumber, pageSize);
+        }
+
         public virtual IPagedList<T> ListAll(IDictionary criteriaCollection, int pageNumber, int pageSize)
         {
             return Repository.ListAll(criteriaCollection, pageNumber, pageSize);
@@ -159,13 +169,14 @@ namespace Framesharp.DomainService
         #endregion
     }
 
-    public class CrudStatelessDomainService<T, TRepository> : CrudStatelessDomainService<T>, ICrudStatelessDomainService<T, TRepository> where TRepository : IStatelessRepository<T> where T : class, IDomainObject
+    public class CrudStatelessDomainService<T, TRepository> : CrudStatelessDomainService<T> where T : class, IDomainObject
     {
         protected new TRepository Repository { get; private set; }
 
-        public CrudStatelessDomainService(IStatelessOperationCallContext context) : base(context)
+        public CrudStatelessDomainService(IStatelessOperationCallContext operationCallContext)
+            : base(operationCallContext)
         {
-            Repository = DependencyResolver.GetInstance<TRepository>("context", context);
+            Repository = DependencyResolver.GetInstance<TRepository>("operationCallContext", operationCallContext);
         }
     }
 }

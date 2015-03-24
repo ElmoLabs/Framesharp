@@ -61,7 +61,7 @@ namespace Framesharp.Repository
 
         public virtual T GetByCriteria(IDictionary criteriaCollection)
         {
-            var criteria = Session.CreateCriteria<T>();
+            ICriteria criteria = Session.CreateCriteria<T>();
 
             criteria.Add(Restrictions.AllEq(criteriaCollection));
 
@@ -131,6 +131,13 @@ namespace Framesharp.Repository
             return ListAll(null, null);
         }
 
+        public virtual IList<T> ListAll(string columnName, object columnValue)
+        {
+            IDictionary criteriaCollection = new Dictionary<string, object>() { { columnName, columnValue } };
+
+            return ListAll(criteriaCollection);
+        }
+
         public virtual IList<T> ListAll(IDictionary criteriaCollection)
         {
             return ListAll(criteriaCollection, null);
@@ -178,6 +185,13 @@ namespace Framesharp.Repository
         public virtual IPagedList<T> ListAll(int pageNumber, int pageSize)
         {
             return ListAll(null, null, pageNumber, pageSize);
+        }
+
+        public virtual IPagedList<T> ListAll(string columnName, object columnValue, int pageNumber, int pageSize)
+        {
+            IDictionary criteriaCollection = new Dictionary<string, object>() {{columnName, columnValue}};
+
+            return ListAll(criteriaCollection, pageNumber, pageSize);
         }
 
         public virtual IPagedList<T> ListAll(IDictionary criteriaCollection, int pageNumber, int pageSize)

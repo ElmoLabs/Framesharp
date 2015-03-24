@@ -5,11 +5,11 @@ using Framesharp.Domain;
 
 namespace Framesharp.Data.Interfaces
 {
-    public interface IDataService
+    public interface IPersistenceManager
     {
     }
 
-    public interface IDataService<T> : IDataService where T : class, IDomainObject
+    public interface IPersistenceManager<T> : IPersistenceManager where T : class, IDomainObject
     {
         void Save(T entity);
 
@@ -45,6 +45,8 @@ namespace Framesharp.Data.Interfaces
 
         IList<T> ListAll();
 
+        IList<T> ListAll(string columnName, object columnValue);
+
         IList<T> ListAll(IDictionary criteriaCollection);
 
         IPagedList<T> ListAllAscending(IDictionary criteriaCollection, int pageNumber, int pageSize);
@@ -60,6 +62,8 @@ namespace Framesharp.Data.Interfaces
         IPagedList<T> ListAllDescending(string orderByPropertyName, int pageNumber, int pageSize);
 
         IPagedList<T> ListAll(int pageNumber, int pageSize);
+
+        IPagedList<T> ListAll(string columnName, object columnValue, int pageNumber, int pageSize);
 
         IPagedList<T> ListAll(IDictionary criteriaCollection, int pageNumber, int pageSize);
     }

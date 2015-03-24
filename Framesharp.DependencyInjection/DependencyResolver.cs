@@ -5,7 +5,6 @@ using Framesharp.Configuration;
 using StructureMap;
 using StructureMap.Pipeline;
 using StructureMap.Web.Pipeline;
-using DSL = StructureMap.Configuration.DSL;
 
 namespace Framesharp.DependencyInjection
 {
@@ -17,7 +16,7 @@ namespace Framesharp.DependencyInjection
             get
             {
                 if (_container == null)
-                    throw new ConfigurationException("The structure map container is not set. Check if DependencyResolver.ConfigureApplication is being called in your application startup.");
+                    throw new ConfigurationErrorsException("The structure map container is not set. Check if DependencyResolver.ConfigureApplication is being called in your application startup.");
                 
                 return _container;
             }

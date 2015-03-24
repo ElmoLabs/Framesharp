@@ -7,9 +7,9 @@ namespace Framesharp.DomainService
     {
         public IStatelessOperationCallContext StatelessOperationCallContext { get; private set; }
 
-        protected StatelessDomainServiceBase(IStatelessOperationCallContext context)
+        protected StatelessDomainServiceBase(IStatelessOperationCallContext operationCallContext)
         {
-            StatelessOperationCallContext = context;
+            StatelessOperationCallContext = operationCallContext;
         }
 
         public void Dispose()

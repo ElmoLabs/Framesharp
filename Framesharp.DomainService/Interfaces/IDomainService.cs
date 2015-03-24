@@ -4,7 +4,7 @@ using Framesharp.Data.Interfaces;
 
 namespace Framesharp.DomainService.Interfaces
 {
-    public interface IDomainService : IOperationCaller, IDataService, IDisposable
+    public interface IDomainService : IOperationCaller, IPersistenceManager, IDisposable
     {
     }
 }
