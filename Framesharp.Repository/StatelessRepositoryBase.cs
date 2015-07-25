@@ -18,9 +18,9 @@ namespace Framesharp.Repository
 
         protected IStatelessSession Session { get { return ((IStatelessSessionProvider)StatelessOperationCallContext.StatelessSessionContainer).GetSession(); } }
 
-        public StatelessRepositoryBase(IStatelessOperationCallContext context)
+        public StatelessRepositoryBase(IStatelessOperationCallContext operationCallContext)
         {
-            StatelessOperationCallContext = context;
+            StatelessOperationCallContext = operationCallContext;
         }
 
         public virtual void Save(T entity)

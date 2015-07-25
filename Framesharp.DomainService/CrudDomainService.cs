@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Framesharp.Collection;
 using Framesharp.Core.Interfaces;
+using Framesharp.Data.Transaction;
 using Framesharp.DependencyInjection;
 using Framesharp.Domain;
 using Framesharp.DomainService.Interfaces;
@@ -13,26 +14,31 @@ namespace Framesharp.DomainService
     {
         protected IRepository<T> Repository { get; private set; }
 
-        public CrudDomainService(IOperationCallContext context) : base(context)
+        public CrudDomainService(IOperationCallContext operationCallContext)
+            : base(operationCallContext)
         {
-            Repository = DependencyResolver.GetInstance<IRepository<T>>("context", context);
+            Repository = DependencyResolver.GetInstance<IRepository<T>>("operationCallContext", operationCallContext);
         }
         
+        [TransactionScope]
         public virtual void Save(T entity)
         {
             Repository.Save(entity);
         }
 
+        [TransactionScope]
         public virtual void Update(T entity)
         {
             Repository.Update(entity);
         }
 
+        [TransactionScope]
         public virtual void Delete(T entity)
         {
             Repository.Delete(entity);
         }
 
+        [TransactionScope]
         public virtual void SaveOrUpdate(T entity)
         {
             Repository.SaveOrUpdate(entity);

@@ -6,6 +6,7 @@
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
+    <DontImportPostSharp>True</DontImportPostSharp>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -48,6 +49,11 @@
     </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PostSharp, Version=4.1.20.0, Culture=neutral, PublicKeyToken=b13fd38b8f9c99d7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\PostSharp.4.1.20\lib\net35-client\PostSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
   </ItemGroup>
@@ -74,6 +80,10 @@
       <Project>{C7734551-8C38-4886-A20D-E0DC7A220179}</Project>
       <Name>Framesharp.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Framesharp.Data.Transaction\Framesharp.Data.Transaction.csproj">
+      <Project>{66a21652-b1e5-4d06-a21d-14febf9238df}</Project>
+      <Name>Framesharp.Data.Transaction</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Framesharp.DependencyInjection\Framesharp.DependencyInjection.csproj">
       <Project>{18240F94-2126-452A-AD99-857247B298B4}</Project>
       <Name>Framesharp.DependencyInjection</Name>
@@ -91,6 +101,9 @@
       <Name>Framesharp.Repository</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>
@@ -99,6 +112,11 @@ xcopy $(TargetDir)*.dll $(SolutionDir)Bin\ /Y
 
 	</PostBuildEvent>
   </PropertyGroup>
+  <Import Project="..\packages\PostSharp.4.1.20\tools\PostSharp.targets" Condition="Exists('..\packages\PostSharp.4.1.20\tools\PostSharp.targets')" />
+  <Target Name="EnsurePostSharpImported" BeforeTargets="BeforeBuild" Condition="'$(PostSharp30Imported)' == ''">
+    <Error Condition="!Exists('..\packages\PostSharp.4.1.20\tools\PostSharp.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://www.postsharp.net/links/nuget-restore." />
+    <Error Condition="Exists('..\packages\PostSharp.4.1.20\tools\PostSharp.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://www.postsharp.net/links/nuget-restore." />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

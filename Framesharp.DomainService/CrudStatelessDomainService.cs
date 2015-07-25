@@ -6,6 +6,7 @@ using Framesharp.DependencyInjection;
 using Framesharp.Domain;
 using Framesharp.DomainService.Interfaces;
 using Framesharp.Data.Interfaces;
+using Framesharp.Data.Transaction;
 using Framesharp.Repository;
 
 namespace Framesharp.DomainService
@@ -20,21 +21,25 @@ namespace Framesharp.DomainService
             Repository = DependencyResolver.GetInstance<IStatelessRepository<T>>("operationCallContext", operationCallContext);
         }
 
+        [TransactionScope]
         public virtual void Save(T entity)
         {
             Repository.Save(entity);
         }
 
+        [TransactionScope]
         public virtual void Update(T entity)
         {
             Repository.Update(entity);
         }
 
+        [TransactionScope]
         public virtual void Delete(T entity)
         {
             Repository.Delete(entity);
         }
 
+        [TransactionScope]
         public virtual void SaveOrUpdate(T entity)
         {
             Repository.SaveOrUpdate(entity);

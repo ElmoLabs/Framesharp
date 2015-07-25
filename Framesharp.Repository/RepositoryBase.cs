@@ -16,9 +16,9 @@ namespace Framesharp.Repository
 
         protected ISession Session { get { return ((ISessionProvider)OperationCallContext.SessionContainer).GetSession(); } }
 
-        public RepositoryBase(IOperationCallContext context)
+        public RepositoryBase(IOperationCallContext operationCallContext)
         {
-            OperationCallContext = context;
+            OperationCallContext = operationCallContext;
         }
 
         public virtual void Save(T entity)

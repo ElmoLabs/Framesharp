@@ -7,17 +7,17 @@ namespace Framesharp.DomainService
 {
     public static class DomainServiceFactory
     {
-        public static T Get<T>(IOperationCallContext context) where T : IPersistenceManager
+        public static T Get<T>(IOperationCallContext operationCallContext) where T : IPersistenceManager
         {
-            return DependencyResolver.GetInstance<T>("operationCallContext", context);
+            return DependencyResolver.GetInstance<T>("operationCallContext", operationCallContext);
         }
 
         public static T GetStateless<T>() where T : IStatelessDomainService
         {
-            IStatelessOperationCallContext context =
+            IStatelessOperationCallContext operationCallContext =
                     DependencyResolver.GetInstance<IStatelessOperationCallContext>();
 
-            return DependencyResolver.GetInstance<T>("operationCallContext", context);
+            return DependencyResolver.GetInstance<T>("operationCallContext", operationCallContext);
         }
     }
 }

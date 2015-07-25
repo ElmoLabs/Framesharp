@@ -5,7 +5,8 @@ namespace Framesharp.Repository
 {
     public class GenericRepository<T> : RepositoryBase<T> where T : class, IDomainObject
     {
-        public GenericRepository(IOperationCallContext context): base(context)
+        public GenericRepository(IOperationCallContext operationCallContext)
+            : base(operationCallContext)
         {
         }
     }

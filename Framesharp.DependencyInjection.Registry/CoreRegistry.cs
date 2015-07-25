@@ -2,7 +2,6 @@
 using Framesharp.Core;
 using Framesharp.Core.Interfaces;
 using Framesharp.Data.Interfaces;
-using StructureMap.Web;
 
 namespace Framesharp.DependencyInjection.Registry
 {

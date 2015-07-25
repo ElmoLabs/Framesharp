@@ -5,8 +5,8 @@ namespace Framesharp.Repository
 {
     public class StatelessGenericRepository<T> : StatelessRepositoryBase<T> where T : class, IDomainObject
     {
-        public StatelessGenericRepository(IStatelessOperationCallContext context)
-            : base(context)
+        public StatelessGenericRepository(IStatelessOperationCallContext operationCallContext)
+            : base(operationCallContext)
         {
         }
     }
