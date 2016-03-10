@@ -4,7 +4,7 @@ using Framesharp.Data.Interfaces;
 
 namespace Framesharp.DependencyInjection.Registry
 {
-    public class NHibernateRegistry : StructureMap.Configuration.DSL.Registry
+    public class NHibernateRegistry : StructureMap.Registry
     {
         public NHibernateRegistry(ISessionFactory sessionFactory)
         {

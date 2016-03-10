@@ -4,6 +4,6 @@ namespace Framesharp.Configuration
 {
     public class ApplicationSettings
     {
-        public virtual IList<StructureMap.Configuration.DSL.Registry> DependencyRegistries { get; set; }
+        public virtual IList<StructureMap.Registry> DependencyRegistries { get; set; }
     }
 }

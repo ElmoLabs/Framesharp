@@ -2,10 +2,11 @@
 using Framesharp.Core;
 using Framesharp.Core.Interfaces;
 using Framesharp.Data.Interfaces;
+using StructureMap.Web;
 
 namespace Framesharp.DependencyInjection.Registry
 {
-    public class CoreRegistry : StructureMap.Configuration.DSL.Registry
+    public class CoreRegistry : StructureMap.Registry
     {
         public CoreRegistry()
         {

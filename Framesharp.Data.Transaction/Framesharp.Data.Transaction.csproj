@@ -44,8 +44,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="PostSharp">
-      <HintPath>..\packages\PostSharp.4.1.20\lib\net35-client\PostSharp.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\PostSharp.4.2.21\lib\net35-client\PostSharp.dll</HintPath>
     </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />

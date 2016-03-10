@@ -3,7 +3,7 @@ using Framesharp.Repository;
 
 namespace Framesharp.DependencyInjection.Registry
 {
-    public class RepositoryRegistry : StructureMap.Configuration.DSL.Registry
+    public class RepositoryRegistry : StructureMap.Registry
     {
         public RepositoryRegistry()
         {

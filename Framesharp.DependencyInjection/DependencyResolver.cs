@@ -3,6 +3,7 @@ using System.Configuration;
 using Framesharp.Configuration;
 using StructureMap;
 using StructureMap.Pipeline;
+using StructureMap.Web.Pipeline;
 
 namespace Framesharp.DependencyInjection
 {
