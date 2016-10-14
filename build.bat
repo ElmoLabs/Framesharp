@@ -1,1 +1,1 @@
-C:\windows\microsoft.net\framework\v4.0.30319\MsBuild.exe Framesharp-Full.sln /p:OutputPath=D:\Projetos\Resources
+C:\windows\microsoft.net\framework\v4.0.30319\MsBuild.exe Framesharp-Full.sln /p:OutputPath=.\Resources
